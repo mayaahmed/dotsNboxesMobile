@@ -42,7 +42,8 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-   color ="#FFD700";	
+  color="#6B8E23";
+  //  color ="#FFD700";	
    
   // color="#99FF33"; 
   
