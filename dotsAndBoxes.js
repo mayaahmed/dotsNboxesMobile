@@ -1,7 +1,7 @@
 // m is number of rows and  n is number of columns
 
-var m= 4; 
-var n = 4;
+var m= 6; 
+var n = 5;
 var i=0; var j=0;
 var computer =0;
 var computerScore=0;
@@ -42,7 +42,11 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-  color="#99FF33"; var i=0; var j=0;
+   color ="#FFD700";	
+   
+  // color="#99FF33"; 
+  
+var i=0; var j=0;
   for(i=0;i<m+1;i++){
     for(j=0;j<n;j++){
       if(topArray[i][j].style.backgroundColor=="red") 
@@ -102,9 +106,10 @@ function run(s,r,c){
 
 
 function middleOn(r,c,color,text){
-  middleArray[r][c].style.backgroundColor=color;
+// middleArray[r][c].style.backgroundColor=color;
      middleArray[r][c].innerHTML=text;
-    middleArray[r][c].style.color="white";
+     middleArray[r][c].style.color= color;
+//  middleArray[r][c].style.color="white";
     middleScore=middleScore+1;
   checkresult();
 }
@@ -249,7 +254,7 @@ function computerTurn(){
 
 function checkresult(){
 
-  if(middleScore==16){
+  if(middleScore==30){
         if(playerScore > computerScore)
          alert('Congratulations! You won');
        else if(playerScore < computerScore)
