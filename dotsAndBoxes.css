@@ -1,0 +1,124 @@
+#board
+{
+  width:700px; height: 700px;
+  margin: 20px auto auto 15px;
+   opacity=0.7
+
+}
+
+
+
+div.left
+{
+float: left;
+width:5px;
+height:40px;
+margin:0px;
+border:1px solid skyblue;
+background: white;
+box-shadow: 5px 5px 50px #1c1c1c;
+-webkit-transition: -webkit-transform 1s;
+-ms-transition: -ms-transform 1s;
+-moz-transition: -moz-transform 1s;
+-transition: -transform 1s;
+}
+
+div.top
+{
+float: left;
+width:40px;
+height:5px;
+margin:3px;
+border:1px solid skyblue;
+background: white;
+box-shadow: 5px 5px 50px #1c1c1c;
+-webkit-transition: -webkit-transform 1s;
+-ms-transition: -ms-transform 1s;
+-moz-transition: -moz-transform 1s;
+-transition: -transform 1s;
+}
+
+
+div.middle
+{
+float: left;
+width: 40px;
+height:40px;
+margin:0px;
+}
+
+
+#leftcell00{
+clear:both;
+float:left;
+}
+
+#topcell10{
+clear:both;
+float:left;
+}
+
+#leftcell10{
+clear:both;
+float:left;
+}
+
+#topcell20{
+clear:both;
+float:left;
+}
+#leftcell20{
+clear:both;
+float:left;
+}
+
+#topcell30{
+clear:both;
+float:left;
+}
+
+#leftcell30{
+clear:both;
+float:left;
+}
+
+#topcell40{
+clear:both;
+float:left;
+}
+
+#leftcell40{
+clear:both;
+float:left;
+}
+
+#topcell50{
+clear:both;
+float:left;
+}
+#leftcell50{
+clear:both;
+float:left;
+}
+
+#topcell60{
+clear:both;
+float:left;
+}
+
+
+div.left:hover
+{
+height:38px;
+}
+div.top:hover
+{
+width:38px;
+}
+
+div.middle:hover
+{
+width:39px;
+height:39px;
+}
+
