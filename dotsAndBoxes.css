@@ -2,11 +2,7 @@
 {
   width:700px; height: 700px;
   margin: 20px auto auto 15px;
-   opacity=0.7
-
 }
-
-
 
 div.left
 {
@@ -37,6 +33,7 @@ box-shadow: 5px 5px 50px #1c1c1c;
 -ms-transition: -ms-transform 1s;
 -moz-transition: -moz-transform 1s;
 -transition: -transform 1s;
+
 }
 
 
@@ -127,3 +124,5 @@ width:39px;
 height:39px;
 }
 
+
+    

@@ -1,3 +1,5 @@
+//Advanced Game script
+
 // m is number of rows and  n is number of columns
 
 var m= 6; 
@@ -42,8 +44,8 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-  color="#6B8E23";
-  //  color ="#FFD700";	
+  //  color="#6B8E23";
+   color ="#FFD700";	
   // color="#99FF33"; 
   
 var i=0; var j=0;
@@ -174,6 +176,94 @@ function computerTurn(){
       j=j+1;
     }
     i=i+1; j=0;
+   }
+  
+ 
+
+
+   i=1; j=1;
+while(decide==0 && i<m){
+     while(j<n){
+
+
+        if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+       
+       else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==true && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+  
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==true 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false
+          && topArray[i+1][j].disabled==true  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+     
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==true 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+
+
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==true   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="top"; decide=1;}
+
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==true  )
+         {r=i; c=j; s="top"; decide=1;}
+
+else if(topArray[i][j].disabled==true && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false  && leftArray[i-1][j].disabled==false 
+&& leftArray[i-1][j+1].disabled==false   && topArray[i-1][j].disabled==false  )
+         {r=i; c=j; s="left"; decide=1;}
+
+
+
+
+
+      j=j+1;
+    }
+    i=i+1; j=0;
+ }
+  
+
+ i=0; j=0;
+while(decide==0 && i<m){
+     while(j<n){
+       if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false)
+         {r=i; c=j; s="top"; decide=1;}
+       
+       else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==true && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false)
+         {r=i; c=j; s="top"; decide=1;}
+       
+       else   if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==true
+          && topArray[i+1][j].disabled==false)
+         {r=i; c=j; s="top"; decide=1;}
+
+else if(topArray[i][j].disabled==false && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==true)
+         {r=i; c=j; s="top"; decide=1;}
+       
+else if(topArray[i][j].disabled==true && leftArray[i][j].disabled==false && leftArray[i][j+1].disabled==false 
+          && topArray[i+1][j].disabled==false)
+         {r=i; c=j; s="left"; decide=1;}
+       
+       
+      j=j+1;
+    }
+    i=i+1; j=0;
  }
   
 
@@ -183,28 +273,29 @@ function computerTurn(){
   if(decide==0){
       row = Math.random(); 
       col = Math.random();
-      if(row < 0.2) r=0; 
-      else if(row < 0.4) r=1;  
-      else if(row < 0.6) r=2;
-      else if(row < 0.8) r=3;
-      else r=4;
+      if(row < 0.16) r=0; 
+      else if(row < 0.32) r=1;  
+      else if(row < 0.48) r=2;
+      else if(row < 0.64) r=4;
+      else if(row < 0.8) r=5;
+      else r=6;
       if(col < 0.2) c=0;
       else if(col < 0.4) c=1; 
       else if(col < 0.6) c=2; 
       else if(col < 0.8) c=3; 
       else c=4;  
 
-      if(r<4 && c<4){
+      if(r<6 && c<4){
         if(topArray[r][c].disabled==false)
         {s="top"; decide=1;}
         else if(leftArray[r][c].disabled==false)
          {var s="left"; decide=1;} 
        }
-      if(r==4 && c<4){
+      if(r==6 && c<4){
         if(topArray[r][c].disabled==false)
          {var s="top"; decide=1;} 
       }
-      if(r<4 && c==4){
+      if(r<6 && c==4){
         if(leftArray[r][c].disabled==false)
          {var s="left"; decide=1;} 
       }
@@ -255,7 +346,7 @@ function computerTurn(){
 function checkresult(){
 
   if(middleScore==30){
-        if(playerScore > computerScore)
+        if(playerScore > computerScore+1)
          alert('Congratulations! You won');
        else if(playerScore < computerScore)
          alert('Game Over! You lose');
