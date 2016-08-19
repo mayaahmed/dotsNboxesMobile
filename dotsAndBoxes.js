@@ -42,9 +42,9 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-  color="#6B8E23";
+  // color="#6B8E23";
   //  color ="#FFD700";	
-  // color="#99FF33"; 
+   color="#99FF33"; 
   
 var i=0; var j=0;
   for(i=0;i<m+1;i++){
@@ -106,10 +106,10 @@ function run(s,r,c){
 
 
 function middleOn(r,c,color,text){
-// middleArray[r][c].style.backgroundColor=color;
+  //  middleArray[r][c].style.backgroundColor=color;
      middleArray[r][c].innerHTML=text;
-     middleArray[r][c].style.color= color;
-//  middleArray[r][c].style.color="white";
+        middleArray[r][c].style.color= color;
+        // middleArray[r][c].style.color="white";
     middleScore=middleScore+1;
   checkresult();
 }

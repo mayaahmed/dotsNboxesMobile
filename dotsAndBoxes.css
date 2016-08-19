@@ -1,7 +1,9 @@
 #board
 {
-  width:700px; height: 700px;
+  width:250px; height: 350px;
   margin: 20px auto auto 15px;
+box-shadow: 1px 1px 15px #CCE5FF;
+
 }
 
 div.left
@@ -12,7 +14,7 @@ height:40px;
 margin:0px;
 border:1px solid skyblue;
 background: white;
-box-shadow: 5px 5px 50px #1c1c1c;
+box-shadow: 2px 2px 50px #1c1c1c;
 -webkit-transition: -webkit-transform 1s;
 -ms-transition: -ms-transform 1s;
 -moz-transition: -moz-transform 1s;
