@@ -8,6 +8,8 @@ var computerScore=0;
 var playerScore=0;
 var middleScore=0;
 
+// constructing three arrays
+
 var topArray = new Array(m+1);
 for(i=0;i<m+1;i++)
   topArray[i]=new Array(n);
@@ -41,12 +43,12 @@ for(i=0;i<m;i++){
   middleArray[i][j].value=0;}
 }
 
+
+// updating color of computer choices
+
 function updateColor(){
- 
- 
-    color="#99FF33"; 
-  
-var i=0; var j=0;
+   color="#99FF33"; 
+  var i=0; var j=0;
   for(i=0;i<m+1;i++){
     for(j=0;j<n;j++){
       if(topArray[i][j].style.backgroundColor=="red") 
@@ -74,31 +76,27 @@ function changeColor(s,r,c,color){
     leftArray[r][c].disabled=true;
    }
  
-
 }//end of fn
+
 
 function run(s,r,c){
   var check=0;
-  
   if(s=='top'){
     if(topArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
       check =  checkMiddleOn(s,r,c,"skyblue", "U")
-        if(check==1) playerScore=playerScore+1;
-                    if(check==0)        
-                      computerTurn();
-           }
+        if(check==0)  computerTurn();
     }
+ 
+  }
 
   if(s=='left'){
     if(leftArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
       check = checkMiddleOn(s,r,c,"skyblue","U")
-        if(check==1) playerScore=playerScore+1;
-                      if(check==0)        
-                   computerTurn();
-       }  
-}
+          if(check==0)  computerTurn();
+    }
+  }
    
 } // end of function run
 
@@ -106,12 +104,12 @@ function run(s,r,c){
 
 
 function middleOn(r,c,color,text){
-  //  middleArray[r][c].style.backgroundColor="beige";
-     middleArray[r][c].innerHTML=text;
-        middleArray[r][c].style.color= color;
-        // middleArray[r][c].style.color="white";
-    middleScore=middleScore+1;
-  checkresult();
+  middleArray[r][c].innerHTML=text;
+  middleArray[r][c].style.color= color;
+  middleScore=middleScore+1;
+  if(text=='C') computerScore=computerScore+1;
+  else if(text=='U') playerScore=playerScore+1;
+ checkresult(); 
 }
 
 
@@ -238,32 +236,29 @@ function computerTurn(){
     i=i+1; j=0;
   }       
 
-  
-
- 
   changeColor(s,r,c,color);
-    check = checkMiddleOn(s,r,c,color,"C");
-    if(check==1) {       
-      computerScore=computerScore+1;   
-      computerTurn();
-    }
+  check = checkMiddleOn(s,r,c,color,"C");
+    if(check==1) computerTurn();
+    
    
 } //end of function
 
 
 
 function checkresult(){
-
   if(middleScore==30){
     if(playerScore > computerScore){
-         alert('Congratulations! You won');
+         alert('Congratulations! You won'+ '\n Computer Score: '+computerScore +'\n Player Score:' + playerScore);
          applaud(1);
     }
     else if(playerScore < computerScore){
-         alert('Game Over! You lose');
+         alert('Game Over! You lose'+ '\n Computer Score: '+computerScore +'\n Player Score:' + playerScore);
          applaud(0);
     }
-       else alert('Game is a draw');
+    else {
+      alert('Game is a draw'+ '\n Computer Score: '+computerScore + '\n Player Score:' + playerScore);
+      applaud(1);
+    }
   }
 }
   

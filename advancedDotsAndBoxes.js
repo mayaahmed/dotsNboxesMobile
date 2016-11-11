@@ -44,22 +44,19 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-  //  color="#6B8E23";
-  // color ="#FFD700";	
    color="#99FF33"; 
-  
-var i=0; var j=0;
-  for(i=0;i<m+1;i++){
-    for(j=0;j<n;j++){
-      if(topArray[i][j].style.backgroundColor=="red") 
-        topArray[i][j].style.backgroundColor=color;
+   var i=0; var j=0;
+   for(i=0;i<m+1;i++){
+     for(j=0;j<n;j++){
+       if(topArray[i][j].style.backgroundColor=="red") 
+         topArray[i][j].style.backgroundColor=color;
     }
   }        
 
-for(i=0;i<m;i++){
-    for(j=0;j<n+1;j++){
-      if(leftArray[i][j].style.backgroundColor=="red") 
-        leftArray[i][j].style.backgroundColor=color;
+   for(i=0;i<m;i++){
+     for(j=0;j<n+1;j++){
+       if(leftArray[i][j].style.backgroundColor=="red") 
+         leftArray[i][j].style.backgroundColor=color;
     }
   }        
  }//end of fn
@@ -75,8 +72,6 @@ function changeColor(s,r,c,color){
     leftArray[r][c].style.backgroundColor=color; 
     leftArray[r][c].disabled=true;
    }
- 
-
 }//end of fn
 
 function run(s,r,c){
@@ -85,35 +80,31 @@ function run(s,r,c){
   if(s=='top'){
     if(topArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
-      check =  checkMiddleOn(s,r,c,"skyblue", "Yours")
-        if(check==1) playerScore=playerScore+1;
-                    if(check==0)        
-                      computerTurn();
-           }
+      check =  checkMiddleOn(s,r,c,"skyblue", "U")
+        if(check==0)  computerTurn();
     }
+  }
 
   if(s=='left'){
     if(leftArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
-      check = checkMiddleOn(s,r,c,"skyblue","Yours")
-        if(check==1) playerScore=playerScore+1;
-                      if(check==0)        
-                   computerTurn();
-       }  
-}
-   
+      check = checkMiddleOn(s,r,c,"skyblue","U")
+        if(check==0) computerTurn();
+    }  
+  }
 } // end of function run
 
 
 
 
 function middleOn(r,c,color,text){
-  // middleArray[r][c].style.backgroundColor=color;
+ 
      middleArray[r][c].innerHTML=text;
      middleArray[r][c].style.color= color;
-     //middleArray[r][c].style.color="white";
-    middleScore=middleScore+1;
-  checkresult();
+     middleScore=middleScore+1;
+     if(text=='C') computerScore=computerScore+1;
+     else if(text=='U') playerScore=playerScore+1;
+     checkresult(); 
 }
 
 
@@ -333,25 +324,35 @@ else if(topArray[i][j].disabled==true && leftArray[i][j].disabled==false && left
 
  
   changeColor(s,r,c,color);
-    check = checkMiddleOn(s,r,c,color,"Mine");
-    if(check==1) {       
-      computerScore=computerScore+1;   
-      computerTurn();
-    }
+    check = checkMiddleOn(s,r,c,color,"C");
+    if(check==1) computerTurn();
+    
    
 } //end of function
 
 
-
 function checkresult(){
-
   if(middleScore==30){
-        if(playerScore > computerScore+1)
-         alert('Congratulations! You won');
-       else if(playerScore < computerScore)
-         alert('Game Over! You lose');
-       else alert('Game is a draw');
+    if(playerScore > computerScore){
+         alert('Congratulations! You won.'+ '\n' +'Computer Score: '+computerScore +'\n'+ 'Player Score:' + playerScore);
+         applaud(1);
+    }
+    else if(playerScore < computerScore){
+         alert('Game Over! You lose.'+ '\n Computer Score: '+computerScore +'\n Player Score:' + playerScore);
+         applaud(0);
+    }
+    else {
+      alert('Game is a draw.'+ '\n Computer Score: '+computerScore +'\n Player Score:' + playerScore);
+      applaud(1);
+    }
   }
 }
-  
 
+
+function applaud(n){
+  if(n==1)
+var audio = new Audio('applause.mp3');
+  if(n==0)
+var audio = new Audio('boo.mp3');
+audio.play();
+}
