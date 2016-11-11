@@ -43,8 +43,8 @@ for(i=0;i<m;i++){
 
 function updateColor(){
  
-  color="yellow";
-  //   color="#99FF33"; 
+ 
+    color="#99FF33"; 
   
 var i=0; var j=0;
   for(i=0;i<m+1;i++){
