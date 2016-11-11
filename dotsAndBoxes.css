@@ -1,8 +1,8 @@
 #board
 {
-  width:250px; height: 350px;
+  width:270px; height: 350px;
   margin: 20px auto auto 15px;
-box-shadow: 1px 1px 15px #CCE5FF;
+// box-shadow: 1px 1px 15px #CCE5FF;
 
 }
 
@@ -10,7 +10,7 @@ div.left
 {
 float: left;
 width:5px;
-height:40px;
+height:45px;
 margin:0px;
 border:1px solid skyblue;
 background: white;
@@ -25,7 +25,7 @@ box-shadow: 2px 2px 50px #1c1c1c;
 div.top
 {
 float: left;
-width:40px;
+width:45px;
 height:5px;
 margin:3px;
 border:1px solid skyblue;
@@ -42,10 +42,10 @@ box-shadow: 5px 5px 50px #1c1c1c;
 div.middle
 {
 float: left;
-width: 40px;
-height:40px;
-margin:0px;
-font-size: 14px;
+width: 44px;
+height:44px;
+margin-top: 2px;
+font-size: 30px;
 line-height: 40px;
 text-align:center;
 
@@ -113,18 +113,20 @@ float:left;
 
 div.left:hover
 {
-height:38px;
+height:46px;
 }
 div.top:hover
 {
-width:38px;
+width:46px;
 }
 
+
+/*
 div.middle:hover
 {
-width:39px;
-height:39px;
+width:46px;
+height:46px;
 }
-
+*/
 
     

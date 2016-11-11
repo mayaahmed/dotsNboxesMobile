@@ -83,7 +83,7 @@ function run(s,r,c){
   if(s=='top'){
     if(topArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
-      check =  checkMiddleOn(s,r,c,"skyblue", "Yours")
+      check =  checkMiddleOn(s,r,c,"skyblue", "U")
         if(check==1) playerScore=playerScore+1;
                     if(check==0)        
                       computerTurn();
@@ -93,7 +93,7 @@ function run(s,r,c){
   if(s=='left'){
     if(leftArray[r][c].disabled==false){
       changeColor(s,r,c,"skyblue");
-      check = checkMiddleOn(s,r,c,"skyblue","Yours")
+      check = checkMiddleOn(s,r,c,"skyblue","U")
         if(check==1) playerScore=playerScore+1;
                       if(check==0)        
                    computerTurn();
@@ -106,7 +106,7 @@ function run(s,r,c){
 
 
 function middleOn(r,c,color,text){
-  //  middleArray[r][c].style.backgroundColor=color;
+  //  middleArray[r][c].style.backgroundColor="beige";
      middleArray[r][c].innerHTML=text;
         middleArray[r][c].style.color= color;
         // middleArray[r][c].style.color="white";
@@ -242,7 +242,7 @@ function computerTurn(){
 
  
   changeColor(s,r,c,color);
-    check = checkMiddleOn(s,r,c,color,"Mine");
+    check = checkMiddleOn(s,r,c,color,"C");
     if(check==1) {       
       computerScore=computerScore+1;   
       computerTurn();
