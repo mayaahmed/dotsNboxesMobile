@@ -255,12 +255,23 @@ function computerTurn(){
 function checkresult(){
 
   if(middleScore==30){
-        if(playerScore > computerScore)
+    if(playerScore > computerScore){
          alert('Congratulations! You won');
-       else if(playerScore < computerScore)
+         applaud(1);
+    }
+    else if(playerScore < computerScore){
          alert('Game Over! You lose');
+         applaud(0);
+    }
        else alert('Game is a draw');
   }
 }
   
 
+function applaud(n){
+  if(n==1)
+var audio = new Audio('applause.mp3');
+  if(n==0)
+var audio = new Audio('boo.mp3');
+audio.play();
+}
