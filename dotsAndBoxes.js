@@ -42,9 +42,9 @@ for(i=0;i<m;i++){
 }
 
 function updateColor(){
-  // color="#6B8E23";
-  //  color ="#FFD700";	
-   color="#99FF33"; 
+ 
+  color="yellow";
+  //   color="#99FF33"; 
   
 var i=0; var j=0;
   for(i=0;i<m+1;i++){
