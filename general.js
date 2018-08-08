@@ -1,29 +1,32 @@
 
 function checkresult(){
     if(middleScore==30){
-	if(playerScore > computerScore)
-            applaud(1);
+	if(playerScore > computerScore){
+	    var audio = new Audio('applause.mp3');
+            applaud(1, audio);
+	}
 	
-	else if(playerScore < computerScore)
-            applaud(0);
-	
-	else 
-	    applaud(2);
-	
+	else if(playerScore < computerScore){
+	    var audio = new Audio('boo.mp3');
+            applaud(0,audio);
+	}
+	else {
+	    var audio = new Audio('applause.mp3');
+	    applaud(2,audio);
+	}
     }
 }
 
 
-function applaud(n){
+function applaud(n, audio){
     
     if(n==1){
 	var string = 'Congratulations! You won.<br>'+ ' Computer Score:'+computerScore +',  ' +'  Player Score:' + playerScore+'.';
 	document.getElementById("victoryDiv").innerHTML = string;
-	var audio = new Audio('applause.mp3');
 	audio.play();
     }
     if(n==0){
-	var audio = new Audio('boo.mp3');
+
 	var string = 'Game Over! You lose.<br>'+ '  Computer Score: '+computerScore +', '+ ' Player Score:' + playerScore+'.';
 	document.getElementById("victoryDiv").innerHTML = string;
 	
@@ -32,7 +35,7 @@ function applaud(n){
     if(n==2){
 	var string = 'Game is a draw.<br>'+ ' Computer Score: '+computerScore + ', '+' Player Score:' + playerScore +'.';
 	document.getElementById("victoryDiv").innerHTML = string;
-	var audio = new Audio('applause.mp3');
+
 	audio.play();
     }
 
